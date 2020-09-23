@@ -6,7 +6,7 @@ This project contains source code and supporting files for a variery of system l
 
 - recursive_file_dups.py - Run this script to find identical files that may be named differently
 ```bash
-python recursive_file_dups.pysam build <path>
+python recursive_file_dups.py <path>
 ```
 Notes:
  - Assumes python 3
