@@ -1,21 +1,6 @@
 #
-# Write a function that identifies sets of files with identical contents.
-#
-#     find_dupes(root_path) → sets/lists of file paths that have identical contents
-#
-#     find_dupes(“/home/whatever”) → [
-#         [".bashrc", "Backups/2017_bashrc"],
-#         ["Photos/Vacation/DSC1234.JPG", "profile.jpeg", ".trash/lej2dp28/87msnlgyr"],
-#     ]
-#
-# Context:
-# - Imagine this function being packaged up into a command-line tool and people running it on their laptops or servers.
-# - For scale, imagine hard drives with at most 2 TB of data and at most 1M files.
-#
-# For traversing the filesystem, use these library functions:
-# - list_folder(path) → list of immediate file and folder children
-# - is_folder(path) → boolean
-#
+# This function identifies files (Can be different names) with identical contents within a folder
+# TODO Modify to store hashes and identify duplicates in the entire file system
 
 import hashlib, os, sys
 
@@ -51,7 +36,7 @@ def find_dupes(root_path):
         if is_folder(os.path.abspath(explicit_path)):
             find_dupes(explicit_path)
         else:
-            hashcode = md5(explicit_path)  # 632746
+            hashcode = md5(explicit_path)
             file_list = []
             if hashcode not in file_dictionary:
                 file_list.append(explicit_path)
