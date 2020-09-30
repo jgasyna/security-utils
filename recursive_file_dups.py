@@ -58,7 +58,7 @@ if __name__ == "__main__":
     try:
         user_root_path = sys.argv[1]
     except Exception as e:
-        print('WARNING: No path specificied, running in current path ')
+        print('WARNING: No path specified, running in current path ')
         user_root_path = '.'
 
     try:
